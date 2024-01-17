@@ -1,32 +1,28 @@
-let numeroSecreto = 6;
-let maximos_int = 5;
+let numeroSecreto = parseInt(Math.random()*11);
+let numeroIntentos = 1;
+alert(numeroSecreto);
 
-
-//console.log(numeroUsuario);
-/*
-if (numeroUsuario == numeroSecreto) {
-    alert('Acertaste el numero');
-}else{
-     alert('No adivinaste el numero correcto');
-} 
-*/
 
 function num_correct() {
-    if(maximos_int > 0){
-        let numeroUsuario = prompt("Me indicas un numero por favor:");
-        if (numeroUsuario == numeroSecreto) {
-            alert('Acertaste el numero');
-            return true;
-        }else{
-            alert('No adivinaste el numero correcto, prueba de nuevo, intentos restantes: '+ maximos_int);
-            maximos_int-= 1;
-            num_correct();
-            return false;
+    let numeroAdivinar;
+
+    alert('Bienvenida y bievenido a nuestro juegto de adivinanza!');
+
+    while (numeroAdivinar != numeroSecreto) {
+        let numeroAdivinar = prompt('Escoja un numero del 0 al 9');
+        if (numeroAdivinar == numeroSecreto) {
+            break;
+        } else {
+            if (numeroAdivinar > numeroSecreto) {
+                alert('El número secreto es menor');
+            } else {
+                alert('El número secreto es mayor');
+            }
         }
-    }else{
-        alert('El numero maximo de intentos ha sido alcanzado, ¡Perdiste!');
+        numeroIntentos++;
     }
-        
+    let palabraintento = numeroIntentos > 1 ? 'intentos' : 'intento' 
+    alert(`El número secreto era ${numeroSecreto} y lo encontraste en: ${numeroIntentos} ${palabraintento}`)
   }
 
 num_correct();
