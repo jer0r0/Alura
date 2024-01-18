@@ -1,39 +1,37 @@
-let numeroSecreto = parseInt(Math.random()*11);
-let numeroIntentos = 1;
-console.log(numeroSecreto);
-let numeroAdivinar = 0 ;
-let maxIntentos= 5;
-let numeroMinimo= 1;
-let numeroMaximo= 10;
+/*Crea un contador que comience en 1 y vaya hasta 10 usando un bucle 'while'. Muestra cada número.*/
+alert("Para ver los resultados abrir la consola del navegador. (Ctrl + Shift + 'i')")
 
+console.log(" \nNumeros del 1 al 10");
+let contador = 1;
+while(contador <= 10){
+    console.log(`El numero es ${contador}`);
+    contador++;
+}
 
-function num_correct() {
-    let numeroAdivinar;
+/*Crea un contador que comience en 10 y vaya hasta 0 usando un bucle 'while'. Muestra cada número.*/
+console.log(" \nNumeros del 10 al 0");
+let contador2 = 10;
+while(contador2 >=0 ){
+    console.log(`El numero es ${contador2}`);
+    contador2--;
+}
 
-    alert('Bienvenida y bievenido a nuestro juego de adivinanza!');
-    if(numeroSecreto == 0){
-        numeroSecreto = parseInt(Math.random()*11);
-    }
+/*Crea un programa de cuenta regresiva. Pide un número y cuenta desde 0 hasta ese número utilizando un bucle 'while' en la consola del navegador.*/
 
-    while (numeroAdivinar != numeroSecreto && numeroIntentos <= maxIntentos) {
-        numeroAdivinar = prompt('Escoja un numero entre 1 y 10. Recuerda que tienes 5 intentos para adivinarlo');
-        console.log("El numero a adivinar es: "+ numeroAdivinar);
-        if(numeroAdivinar <numeroMinimo || numeroAdivinar >numeroMaximo){
-            alert(`El numero ${numeroAdivinar} no se encuentra dentro de los parametros establecidos (Es menor que ${numeroMinimo} o mayor que ${numeroMaximo})`)            
-        }else if (numeroAdivinar == numeroSecreto) {
-                console.log(`La comparacion entre ${numeroAdivinar} y  ${numeroSecreto} resulto ser ${numeroAdivinar == numeroSecreto }`)
-                break;
-            } else {
-                if (numeroAdivinar > numeroSecreto) {
-                    alert('El número secreto es menor');
-                } else {
-                    alert('El número secreto es mayor');
-                }
-            }
-            numeroIntentos++;
-        }
-    let palabraintento = numeroIntentos > 1 ? 'intentos' : 'intento' 
-    alert(`El número secreto era ${numeroSecreto} y lo encontraste en: ${numeroIntentos} ${palabraintento}`)
-  }
+console.log(" \nCuenta hasta x numero");
+let numeroMaximo = prompt("Dame el numero para iniciar la cuenta hacia adelante");
+let cuenta = 0; 
+while(cuenta <= numeroMaximo){
+    console.log(`El numero es ${cuenta}`);
+    cuenta++;
+}
 
-num_correct();
+/*Crea un programa de cuenta progresiva. Pide un número y cuenta desde 0 hasta ese número utilizando un bucle 'while' en la consola del navegador.*/
+
+console.log(" \nCuenta regresiva");
+let numeroInfimo = prompt("Dame el numero para iniciar la cuenta atras");
+let cuenta2 = 0; 
+while(numeroInfimo >= cuenta2){
+    console.log(`El numero es ${numeroInfimo}`);
+    numeroInfimo--;
+}
